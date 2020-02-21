@@ -10,13 +10,8 @@ const typeDefs =  gql `
     tags: [String]!
   }
 
-  type singleBlog {
-    blog: Blog!,
-  }
-
-
   extend type Query {
-    blogById(_id: ID!): singleBlog!
+    blogById(_id: ID!): Blog!
     blogByUser(userId:String!,limit:Int,skip:Int): [Blog]!
   }
 

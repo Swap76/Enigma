@@ -14,10 +14,8 @@ export default {
 	blogsEncrypted: async (parent, args) => {
 		try {
 			let { data } = filterAndPagination({},args.limit,args.skip);
-			let result = await Blog.find({}).where(data.where).limit(data.limit).skip(data.skip);
-			let temp =  await encryption(result);
-			console.log(temp);
-			return temp;
+			let result = await Blog.find({}).where(data.where).limit(data.limit).skip(data.skip).lean();
+			return encryption(result);
 		} catch (error) {
 			console.log(error);
 		}
