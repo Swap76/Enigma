@@ -12,7 +12,6 @@ const typeDefs =  gql `
 
   type singleBlog {
     blog: Blog!,
-    comments: [Comment]!
   }
 
 

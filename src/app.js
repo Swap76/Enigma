@@ -12,7 +12,6 @@ import index from './graphql/schema/index';
 import Auth from './graphql/schema/Auth';
 import User from './graphql/schema/User';
 import Blog from './graphql/schema/Blog';
-import Comment from './graphql/schema/Comment';
 import Main from './graphql/schema/Main';
 import graphqlResolver from './graphql/resolvers/index';
 import Debug from 'debug';
@@ -40,7 +39,7 @@ initRoutes(app);
 
 // Configuring typeDefs & resolvers
 const graphql = new ApolloServer({
-	typeDefs: [index,Auth,User,Blog,Comment,Main],
+	typeDefs: [index,Auth,User,Blog,Main],
 	resolvers: graphqlResolver,
 	context: async (req) => ({
 		data: await jwtAuth(req)

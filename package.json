@@ -1,5 +1,5 @@
 {
-  "name": "apollo-graphql-mongo-boilerplate",
+  "name": "enigma",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Swap76/Apollo-GraphQL-Mongo-Boilerplate.git"
+    "url": "git+https://github.com/Swap76/Enigma.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Swap76/Apollo-GraphQL-Mongo-Boilerplate/issues"
+    "url": "https://github.com/Swap76/Enigma/issues"
   },
-  "homepage": "https://github.com/Swap76/Apollo-GraphQL-Mongo-Boilerplate#readme",
+  "homepage": "https://github.com/Swap76/Enigma#readme",
   "dependencies": {
     "@hapi/joi": "^15.1.0",
     "apollo-server": "^2.8.1",
