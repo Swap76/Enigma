@@ -1,6 +1,6 @@
-const CryptoJS = require('crypto-js');
 import User from '../../../models/User';
 import {filterAndPagination} from '../../../utils/filterAndPagination';
+import {encryption} from '../../../utils/encryption';
 
 export default {
 	// Lists all users
@@ -17,19 +17,13 @@ export default {
 
 	// Lists all users in Encrypted form
 	usersEncrypted: async (parent, args) => {
-		let { data } = filterAndPagination(args.where,args.limit,args.skip);
-		let result = await User.find({}).where(data.where).limit(data.limit).skip(data.skip).lean();
 		try {
-			result.forEach(element => {
-				Object.entries(element).forEach(entry => {
-					let [key, value] = entry;
-					element[key] = CryptoJS.AES.encrypt(JSON.stringify(value), 'swapnil').toString();
-				});
-			});
+			let { data } = filterAndPagination(args.where,args.limit,args.skip);
+			let result = await User.find({}).where(data.where).limit(data.limit).skip(data.skip).lean();
+			return encryption(result);
 		} catch (error) {
 			console.log(error);
 		}
-		return result;
 	},
   
 };

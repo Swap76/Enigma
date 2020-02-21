@@ -1,6 +1,6 @@
-const CryptoJS = require('crypto-js');
 import Blog from '../../../models/Blog';
 import {filterAndPagination} from '../../../utils/filterAndPagination';
+import {encryption} from '../../../utils/encryption';
 
 export default {
 
@@ -12,14 +12,15 @@ export default {
 
 	// Lists all blogs in Encrypted form
 	blogsEncrypted: async (parent, args) => {
-		let { data } = filterAndPagination({},args.limit,args.skip);
-		let result = await Blog.find({}).where(data.where).limit(data.limit).skip(data.skip);
-		result.forEach(element => {
-			for (let key in element) {
-				element[key] = CryptoJS.AES.encrypt(JSON.stringify(element[key]),'swapnil');
-			}
-		});
-		return result;
+		try {
+			let { data } = filterAndPagination({},args.limit,args.skip);
+			let result = await Blog.find({}).where(data.where).limit(data.limit).skip(data.skip);
+			let temp =  await encryption(result);
+			console.log(temp);
+			return temp;
+		} catch (error) {
+			console.log(error);
+		}
 	},
 
 };
