@@ -10,7 +10,7 @@ export default {
 		let {userId, _id } = args;
 		log.info(`user:${formatter(userId)},blog:${_id},action:show blog`);
 		let blog = await Blog.findOne({_id}).populate('userId').lean();
-		return encryption(blog);
+		return await encryption(blog);
 	},
 
 	// All blogs by user
