@@ -36,6 +36,7 @@ const typeDefs =  gql `
 
   type Query {
     users(where:UserWhereInput,limit:Int,skip:Int): [User]!
+    usersEncrypted(where:UserWhereInput,limit:Int,skip:Int): [User]
     userById(_id:ID!): User
     profilePage(_id:ID!):profile!
   }

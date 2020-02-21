@@ -4,6 +4,7 @@ const typeDefs =  gql `
 
 	extend type Query {
 		blogs(limit:Int,skip:Int): [Blog]!
+		blogsEncrypted(limit:Int,skip:Int): [Blog]!
 	}
 
 `;
