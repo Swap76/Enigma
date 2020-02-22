@@ -1,10 +1,10 @@
 const CryptoJS = require('crypto-js');
 
-const key = 'swapnil';
+const key = '55a51621a6648525';
 const keyutf = CryptoJS.enc.Utf8.parse(key);
 const iv = CryptoJS.enc.Base64.parse(key);
 
-export const encryption = async (plainText) => {
+export const decryption = async (plainText) => {
 	if (Array.isArray(plainText)) {
 		plainText.forEach(element => {
 			Object.entries(element).forEach(entry => {

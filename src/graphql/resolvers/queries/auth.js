@@ -7,20 +7,49 @@ import { sendEmail } from '../../../utils/mail';
 import responseFinal from '../../../utils/sendResponse';
 import log from '../../../config/winston';
 import formatter from '../../../utils/winstonFormatter';
+import { encryption } from '../../../utils/encryption';
+const CryptoJS = require('crypto-js');
+
+const key = '55a51621a6648525';
+const keyutf = CryptoJS.enc.Utf8.parse(key);
+const iv = CryptoJS.enc.Base64.parse(key);
+
+const decryption = async (plainText) => {
+	plainText = CryptoJS.AES.decrypt(plainText, keyutf, { iv: iv }).toString(CryptoJS.enc.Latin1);
+	return plainText;
+};
 
 export default {
 	// Login
 	login: async (parent, args) => {
 		let { email, password } = args;
-		const resultfromJoi = checkInput(['email','password'],args);
+		// console.log(password);
+		decryption(email).then((received_email) => {
+			email = received_email;
+			console.log(email);
+			const resultfromJoi = checkInput(['email','password'],args);
 		if(resultfromJoi != true) return resultfromJoi;
-		const checked = await checkForLogin(email,password);
+		const checked = checkForLogin(email,password);
 		if (!checked.success) return checked;
 		log.info(`user:${formatter(checked.userId)},action:login`);
 		const token = jwt.sign({userId:checked.userId},process.env.JWT_SECRET,{
 			expiresIn: '12h'
 		});
 		return { userId: checked.userId, token, ...responseFinal('200','Sucessfully Logged In')};
+		});
+		// email = CryptoJS.AES.decrypt(email, keyutf, {iv: iv}).toString(CryptoJS.enc.Latin1);
+		// password = CryptoJS.AES.decrypt(password, keyutf, { iv: iv }).toString(CryptoJS.enc.Latin1);
+		// console.log(email);
+		// console.log(password);
+		// const resultfromJoi = checkInput(['email','password'],args);
+		// if(resultfromJoi != true) return resultfromJoi;
+		// const checked = await checkForLogin(email,password);
+		// if (!checked.success) return checked;
+		// log.info(`user:${formatter(checked.userId)},action:login`);
+		// const token = jwt.sign({userId:checked.userId},process.env.JWT_SECRET,{
+		// 	expiresIn: '12h'
+		// });
+		// return { userId: checked.userId, token, ...responseFinal('200','Sucessfully Logged In')};
 	},
 
 	// Resend Otp
