@@ -15,7 +15,10 @@ export default {
 		try {
 			let { data } = filterAndPagination({},args.limit,args.skip);
 			let result = await Blog.find({}).where(data.where).limit(data.limit).skip(data.skip).lean();
-			return encryption(result);
+			result.forEach((element,index) => {
+				result[index] = encryption(element);
+			});
+			return result;
 		} catch (error) {
 			console.log(error);
 		}
