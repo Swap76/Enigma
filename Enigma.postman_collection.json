@@ -242,7 +242,7 @@
 										"body": {
 											"mode": "graphql",
 											"graphql": {
-												"query": "mutation {\n  signup(name:\"DSCSIESGST\",username:\"DSC-SIESGST\", email:\"dsc@siesgst.ac.in\", password:\"vijaya@26\"){\n    code\n    success\n    message\n  }\n}",
+												"query": "mutation {\n  signup(name:\"Swapnil Satish Shinde\",username:\"Swap76\", email:\"swapnil.satish17@siesgst.ac.in\", password:\"vijaya@26\"){\n    code\n    success\n    message\n  }\n}",
 												"variables": ""
 											}
 										},
@@ -494,6 +494,136 @@
 							"port": "3000",
 							"path": [
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/blog/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blog",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Blogs Encrypted",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/blog/all/encrypted",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blog",
+								"all",
+								"encrypted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Single Blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/blog/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blog",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5e4d78459f40d20593119f79"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Single Blog Encrypted",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/blog/:id/encrypted",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blog",
+								":id",
+								"encrypted"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5e4d78459f40d20593119f79"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"userId\":\"5e4d75cf9f40d20593119f77\", \n\t\"title\":\"Testing Create Blog\", \n\t\"content\":\"Testing Create Blog\", \n\t\"tags\":\"Hackathon, Redbull\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/blog/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blog",
+								"create"
 							]
 						}
 					},
