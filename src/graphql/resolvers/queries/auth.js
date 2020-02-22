@@ -14,11 +14,6 @@ const key = '55a51621a6648525';
 const keyutf = CryptoJS.enc.Utf8.parse(key);
 const iv = CryptoJS.enc.Base64.parse(key);
 
-const decryption = async (plainText) => {
-	plainText = CryptoJS.AES.decrypt(plainText, keyutf, { iv: iv }).toString(CryptoJS.enc.Latin1);
-	return plainText;
-};
-
 export default {
 	// Login
 	login: async (parent, args) => {
@@ -35,7 +30,9 @@ export default {
 		const token = jwt.sign({userId:checked.userId},process.env.JWT_SECRET,{
 			expiresIn: '12h'
 		});
-		return { userId: checked.userId, token, ...responseFinal('200','Sucessfully Logged In')};
+		let result = await encryption({ userId: checked.userId, token, code:'200', message:'Sucessfully Logged In'});
+		console.log(result);
+		return result;
 	},
 
 	// Resend Otp

@@ -5,9 +5,8 @@ const typeDefs =  gql `
 	type jwtToken {
 		userId: ID
 		token: String
-		code: String!
-		success: Boolean!
-		message: String!
+		code: String
+		message: String
 	}
 
 	extend type Query {
