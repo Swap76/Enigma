@@ -1,6 +1,11 @@
-# Enigma
+# Apollo GraphQL with MongoDB Boilerplate
 
-Javascript GraphQL and REST API having HTTPS like security without using HTTPS 
+## This boilerplate includes following things:-
+- Apollo GraphQL server creation & configuration
+- MongoDB setup & Model Examples
+- GraphQL schema examples
+- JWT Authorization Middlewear
+- REST API Configuration
 
 ## Getting Started
 
