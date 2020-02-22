@@ -21,7 +21,6 @@ export const encryption = async (plainText) => {
 		return plainText;
 	}
 	else {
-		console.log('plainText');
 		Object.entries(plainText).forEach(entry => {
 			let [key, value] = entry;
 			if (Array.isArray(plainText[key])) {
