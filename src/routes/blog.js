@@ -6,6 +6,7 @@ const router = express.Router();
 /**
  * Main Page
  */
+router.post('/create', blogController.create);
 router.get('/all', blogController.all);
 router.get('/all/encrypted', blogController.allEncrypted);
 router.get('/:id', blogController.show);

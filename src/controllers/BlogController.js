@@ -1,5 +1,31 @@
 import Blog from '../models/Blog';
 import {encryption} from '../utils/encryption';
+import checkInput from '../utils/joiValidate';
+
+/**
+ * Creates a new blog post
+ * @route /blog/create
+ * @body title, body
+ * @method POST
+ */
+
+module.exports.create = async (req, res) => {
+	const { userId, title, content, tags } = req.body;
+	const data = { userId, title, content, tags};
+	const resultfromJoi = checkInput(['userId','title','content','tags'],data);
+	if(resultfromJoi != true) res.status(400).send({'error':error.details[0].message});
+	const newBlog = new Blog(req.body);
+	try {
+		const result = await newBlog.save();
+		if (result) {
+			return res.status(201).send('Post added successfully');
+		}
+		return res.status(400).send({'error':'Failed to create new post. Try again'});
+	} catch (err) {
+		debug(err);
+		return res.status(400).send({'error':'Some error. Try again'});
+	}
+};
 
 /**
  * Shows all blogs
