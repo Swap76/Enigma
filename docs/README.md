@@ -61,6 +61,8 @@ Issues are managed via GitHub Issues [here](https://github.com/Swap76/Enigma/iss
 ## Developers
 
 * **Swapnil Shinde** - [Swap76](https://github.com/Swap76)
+* **Ashok Choudhary** - [ac030540](https://github.com/ac030540)
+* **Aditya Parthasarathy** - [adityap301](https://github.com/adityap301)
 
 ## License
 
