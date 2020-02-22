@@ -11,10 +11,10 @@ export const encryption = async (plainText) => {
 				let [key, value] = entry;
 				if (Array.isArray(element[key])) {
 					element[key].forEach((element,index) => {
-                        element[key][index]  = CryptoJS.AES.decrypt(element, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
+						element[key][index]  = CryptoJS.AES.decrypt(element, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
 					});
 				} else {
-                    element[key]  = CryptoJS.AES.decrypt(value, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
+					element[key]  = CryptoJS.AES.decrypt(value, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
 				}
 			});
 		});
@@ -25,10 +25,10 @@ export const encryption = async (plainText) => {
 			let [key, value] = entry;
 			if (Array.isArray(plainText[key])) {
 				plainText[key].forEach((element,index) => {
-                    plainText[key][index]  = CryptoJS.AES.decrypt(value, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
+					plainText[key][index]  = CryptoJS.AES.decrypt(value, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
 				});
 			} else {
-                plainText[key]  = CryptoJS.AES.decrypt(value, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
+				plainText[key]  = CryptoJS.AES.decrypt(value, keyutf, { iv: iv }).toString(CryptoJS.enc.Utf8);
 			}
 		});
 		return plainText;
