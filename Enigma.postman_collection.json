@@ -22,7 +22,7 @@
 										"body": {
 											"mode": "graphql",
 											"graphql": {
-												"query": "query {\n  login(email:\"dsc@siesgst.ac.in\",password:\"vijaya@26\"){\n    userId\n    token\n    code\n    success\n    message\n  }\n}",
+												"query": "query {\n  login(email:\"+5gM7VyDpX1BaZgqJBYcIcKJChUYBKYk56Qu+zTUmRs=\",password:\"e/ZZ5zTEoPfjLYYn9liZCA==\"){\n    userId\n    token\n    code\n    message\n  }\n}",
 												"variables": ""
 											}
 										},
@@ -93,7 +93,7 @@
 										"body": {
 											"mode": "graphql",
 											"graphql": {
-												"query": "query {\n  userById(_id:\"5b6490e95969e7002076f330\"){\n    name\n    about\n    ratings\n  }\n}",
+												"query": "query {\n  userById(_id:\"5e4d75cf9f40d20593119f77\"){\n    name\n    email\n    about\n  }\n}",
 												"variables": ""
 											}
 										},
@@ -132,7 +132,7 @@
 										"body": {
 											"mode": "graphql",
 											"graphql": {
-												"query": "query {\n  blogById(_id:\"5e4d78459f40d20593119f79\"){\n    blog{\n      _id\n      title\n      tags\n    }\n    comments{\n      content\n    }\n  }\n}",
+												"query": "query {\n  blogById(_id:\"5e4d78459f40d20593119f79\"){\n      _id\n      title\n      content\n      tags\n  }\n}",
 												"variables": ""
 											}
 										},
@@ -187,7 +187,7 @@
 							"_postman_isSubFolder": true
 						},
 						{
-							"name": "Main Blogs Page",
+							"name": "All Blogs",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -200,7 +200,39 @@
 								"body": {
 									"mode": "graphql",
 									"graphql": {
-										"query": "query {\n  blogs {\n    _id\n    userId {\n      name\n      username\n    }\n\ttitle\n    tags\n  }\n}",
+										"query": "query {\n  blogs {\n    _id\n\ttitle\n\tcontent\n    tags\n  }\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Blogs Encrypted",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YjY0OTBlOTU5NjllNzAwMjA3NmYzMzAiLCJpYXQiOjE1Nzk2MjYxMDEsImV4cCI6MTU3OTY2OTMwMX0.-k4cKdCJd-Nh-l8baVDKtwSPsCnvNBwsCkUAnf3Hyh0"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query {\n  blogsEncrypted {\n    _id\n\ttitle\n\tcontent\n    tags\n  }\n}",
 										"variables": ""
 									}
 								},

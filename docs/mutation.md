@@ -6,8 +6,8 @@ Sending JWT token with every request is necessary as all mutations required user
 
 ## Authentication
 
-**signup** ([MutationResponse!](mutation.md#mutation-response))
-Creating a blog.
+**signup** ([MutationResponse!](output.md#mutation-response))
+Signup for user.
 
 | Argument | Type | Description |
 |-------------------|--------------|-------------|
@@ -16,7 +16,7 @@ Creating a blog.
 | ``email`` | ``String!`` | Email ID of new User |
 | ``password`` | ``String!`` | Password of new User |
 
-**verifyUser** ([MutationResponse!](mutation.md#mutation-response))
+**verifyUser** ([MutationResponse!]outputn.md#mutation-response))
 Verifing User a blog.
 
 | Argument | Type | Description |
@@ -25,7 +25,7 @@ Verifing User a blog.
 | ``otp`` | ``String!`` | OTP for Verification |
 
 
-**forgotPassword** ([MutationResponse!](mutation.md#mutation-response))
+**forgotPassword** ([MutationResponse!]outputn.md#mutation-response))
 Resets password of user.
 
 | Argument | Type | Description |
@@ -33,7 +33,7 @@ Resets password of user.
 | ``newPassword`` | ``String!`` | New Password|
 | ``newRePassword`` | ``String!`` | Re New Password |
 
-**updatePassword** ([MutationResponse!](mutation.md#mutation-response))
+**updatePassword** ([MutationResponse!]outputn.md#mutation-response))
 Update Password.
 
 | Argument | Type | Description |
@@ -41,7 +41,7 @@ Update Password.
 | ``oldPassword`` | ``String!`` | Provide Old password |
 | ``newPassword`` | ``String!`` | new password |
 
-**logout** ([MutationResponse!](mutation.md#mutation-response))
+**logout** ([MutationResponse!](output.md#mutation-response))
 Logging out the user.
 
 | Argument | Type | Description |
@@ -50,7 +50,7 @@ Logging out the user.
 
 ## Blog 
 
-**createBlog** ([MutationResponse!](mutation.md#mutation-response))
+**createBlog** ([MutationResponse!]outputn.md#mutation-response))
 Creating a blog.
 
 | Argument | Type | Description |
@@ -59,7 +59,7 @@ Creating a blog.
 | ``content`` | ``String!`` | Provide content of the blog |
 | ``tags`` | ``String!`` | Addes tags to blog |
 
-**editBlog** ([MutationResponse!](mutation.md#mutation-response))
+**editBlog** ([MutationResponse!]outputn.md#mutation-response))
 Editing a blog.
 
 | Argument | Type | Description |
@@ -68,7 +68,7 @@ Editing a blog.
 | ``content`` | ``String!`` | Provide content of the blog |
 | ``tags`` | ``String!`` | Addes tags to blog |
 
-**deleteBlog** ([MutationResponse!](mutation.md#mutation-response))
+**deleteBlog** ([MutationResponse!]outputn.md#mutation-response))
 Editing a blog.
 
 | Argument | Type | Description |
@@ -77,19 +77,9 @@ Editing a blog.
 
 ## User
 
-**updateBio** ([MutationResponse!](mutation.md#mutation-response))
+**updateBio** ([MutationResponse!]outputn.md#mutation-response))
 Updating Bio of user.
 
 | Argument | Type | Description |
 |-------------------|--------------|-------------|
 | ``about`` | ``String!`` | New bio of user |
-
-## Mutation Response
-
-This response is uniform for all mutations
-
-| Argument | Type | Description |
-|-------------------|--------------|-------------|
-| ``code`` | ``Int!`` | Status Code|
-| ``success`` | ``Boolean!`` | Tells Success of mutation |
-| ``message`` | ``String!`` | Provide message after mutation |
