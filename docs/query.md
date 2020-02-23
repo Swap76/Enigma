@@ -16,7 +16,7 @@ Look up for blogs
 
 ## Authentication
 
-**login** ([QueryResponse!](query.md#query-response))
+**login** ([jwtToken!](output.md#auth))
 Login with email and password 
 
 | Argument | Type | Description |
@@ -25,14 +25,14 @@ Login with email and password
 | ``password`` | ``String!`` | Password of user |
 
 
-**resendOtp** ([QueryResponse!](query.md#query-response))
+**resendOtp** ([QueryResponse!](output.md#query-response))
 Resend the OTP to mail of user
 
 | Argument | Type | Description |
 |-------------------|--------------|-------------|
 | ``userId`` | ``String!`` | userId of user |
 
-**forgotPasswordMail** ([QueryResponse!](query.md#query-response))
+**forgotPasswordMail** ([QueryResponse!](output.md#query-response))
 Send password reset link using mail
 
 | Argument | Type | Description |
@@ -75,13 +75,3 @@ Look up for single user by Id
 | Argument | Type | Description |
 |-------------------|--------------|-------------|
 | ``_id`` | ``ID!`` | ID of user |
-
-## Query Response
-
-This response is for some queries
-
-| Argument | Type | Description |
-|-------------------|--------------|-------------|
-| ``code`` | ``Int!`` | Status Code|
-| ``success`` | ``Boolean!`` | Tells Success of queries |
-| ``message`` | ``String!`` | Provide message after queries |

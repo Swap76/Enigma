@@ -6,6 +6,7 @@
     - [Query](query.md)
     - [Mutation](mutation.md)
     - [Special Inputs](inputs.md)
+    - [Special Outputs](output.md)
     - [Interfaces](interfaces.md)
     - [Scalars](scalars.md)
     - [Enum](enum.md)
