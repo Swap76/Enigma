@@ -3,17 +3,6 @@ Every GraphQL schema has a root type for both queries and mutations. The query t
 
 For few Queries the JWT token is neccessary. Good practice will be to send JWT when ever user is logged in.
 
-## Main Pages
-
-**blogs** ([[Blog!]](interfaces.md#blog))
-Look up for blogs   
-
-| Argument | Type | Description |
-|-------------------|--------------|-------------|
-| ``limit`` | ``Int`` | Limit the number of blogs |
-| ``skip`` | ``Int`` | Skip few blogs from the start |
-| ``where`` | ``BlogWhereInput`` | Find by specific value of the fields |
-
 ## Authentication
 
 **login** ([jwtToken!](output.md#auth))
@@ -41,8 +30,26 @@ Send password reset link using mail
 
 ## Blog
 
+**blogs** ([[Blog!]](interfaces.md#blog))
+Look up for all blogs   
+
+| Argument | Type | Description |
+|-------------------|--------------|-------------|
+| ``limit`` | ``Int`` | Limit the number of blogs |
+| ``skip`` | ``Int`` | Skip few blogs from the start |
+
+
+**blogsEncrypted** ([[Blog!]](interfaces.md#blog))
+Look up for all blogs but the data is encrypted  
+
+| Argument | Type | Description |
+|-------------------|--------------|-------------|
+| ``limit`` | ``Int`` | Limit the number of blogs |
+| ``skip`` | ``Int`` | Skip few blogs from the start |
+
+
 **blogById** ([singleBlog!](interfaces.md#blog))
-Look up for single blog with comments   
+Look up for single blog the data is encrypted   
 
 | Argument | Type | Description |
 |-------------------|--------------|-------------|
@@ -56,7 +63,6 @@ Look up for blogs by a particular user
 | ``userId`` | ``String!`` | Find using user Id |
 | ``limit`` | ``Int`` | Limit the number of blogs |
 | ``skip`` | ``Int`` | Skip few blogs from the start |
-| ``where`` | ``BlogWhereInput`` | Find by specific value of the fields |
 
 ## User
 
