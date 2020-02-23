@@ -1,6 +1,51 @@
 # Enigma
 
-Javascript GraphQL and REST API having HTTPS like security without using HTTPS 
+## About the project
+
+It’s no secret that “Data is the new oil”. We all visit hundreds of websites daily and we share and create huge amounts of data every single day on those websites. Many of those websites aren’t secure in terms of user privacy and data protection. Several organizations use insecure connections to transfer data over their intranet, which is a major vulnerability. 
+
+Our aim is to secure the transfer of data over insecure channels.
+
+## Project Structure
+
+Our project has the following structure:
+  * docs
+  * node_modules
+  * src
+    * config
+    * controllers
+    * graphql
+    * middleware
+    * models
+    * routes
+    * utils
+
+  ### 1. Docs
+  This contains all the markdown files for the documentation of the project, which is visualized on Docsify.
+  
+  ### 2. Node Modules
+  Contains project dependencies.
+
+  ### 3. Config
+  This contains all the configuration files; like database connectivity, winston setup, etc.
+
+  ### 4. Controllers
+  This contains all the REST API end-points.
+
+  ### 5. GraphQL
+  This contains schema files, queries and mutations for GraphQL API.
+
+  ### 6. Middleware
+  This contains all the middleware functions of the request-response pipeline.
+
+  ### 7. Models
+  This contains all the mongoDB schema.
+
+  ### 8. Routes
+  This contains all the routes for REST API.
+
+  ### 9. Utils
+  This contains all the helper functions associated with other endpoints.
 
 ## Getting Started
 
