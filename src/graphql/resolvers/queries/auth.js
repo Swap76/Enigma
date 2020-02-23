@@ -23,9 +23,9 @@ export default {
 		console.log(args.email);
 		console.log(args.password);
 		const resultfromJoi = checkInput(['email','password'],args);
-		if(resultfromJoi != true) return resultfromJoi;
+		if(resultfromJoi != true) return await encryption(resultfromJoi);
 		const checked = await checkForLogin(args.email,args.password);
-		if (!checked.success) return checked;
+		if (!checked.success) return await encryption(checked);
 		log.info(`user:${formatter(checked.userId)},action:login`);
 		const token = jwt.sign({userId:checked.userId},process.env.JWT_SECRET,{
 			expiresIn: '12h'
