@@ -1,6 +1,6 @@
 # Enigma
 
-Javascript GraphQL and REST API having HTTPS like security without using HTTPS 
+Javascript module for implementing AES Cryptography algorithum on data transferred via GraphQL & REST API 
 
 ## Getting Started
 
@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 Following are the softwares requried to get arena up and running.
 * [Node.js](https://nodejs.org) - Chrome's V8 Javascript Engine
 * [MongoDB](https://mongodb.org) - NoSQL Database
+* [Redis](https://redis.io/) - Redis Cache
 
 ### Installing
 
@@ -44,11 +45,6 @@ npm run lint -s
 npm run fix -s
 ```
 
-### Nodejs Packages
-[Express](https://expressjs.com) - Node.js Web Framework<br/>
-[Nodemailer](http://npmjs.com/package/nodemailer) - Sending Emails<br/>
-[Raven](https://www.npmjs.com/package/raven) - Sentry Error Monitoring<br/>
-
 ## Issues
 
 Issues are managed via GitHub Issues [here](https://github.com/Swap76/Enigma/issues).
@@ -61,4 +57,4 @@ Issues are managed via GitHub Issues [here](https://github.com/Swap76/Enigma/iss
 
 ## License
 
-This project is licensed under the Apache License. See the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the Apache License. See the [LICENSE.md](https://github.com/Swap76/Enigma/blob/master/LICENSE) file for details.
