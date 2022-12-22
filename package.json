@@ -44,7 +44,7 @@
     "fs": "0.0.1-security",
     "graphql": "^14.4.2",
     "helmet": "^3.21.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "mongoose": "^5.6.4",
